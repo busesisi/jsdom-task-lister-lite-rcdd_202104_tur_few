@@ -1,22 +1,19 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  //grab all the necessary DOM elements
+  /*let newtask = document.querySelector("#new-task-description").value;
+  let tasks = document.querySelector("#tasks").value;
+let tasks = newtask;*/
+const newTaskForm = document.getElementById("create-task-form");
+ const newTaskDescription = document.getElementById("new-task-description");
+ const newTaskPriority = document.getElementById("new-task-priority");
 
-  //form and relevant input fields
-  const newTaskForm = document.getElementById("create-task-form");
-  const newTaskDescription = document.getElementById("new-task-description");
-  const newTaskPriority = document.getElementById("new-task-priority");
+ const newTaskUl = document.getElementById("tasks");
 
-  //ul where new tasks will live on the DOM
-  const newTaskUl = document.getElementById("tasks");
-
-  //attach event listeners
   newTaskForm.addEventListener("submit", createNewTask);
+  // your code here
 });
 
 const createNewTask = event => {
   event.preventDefault();
-  //stop form from trying to submit
   const newTaskDescription = document.getElementById("new-task-description");
   const newTask = document.createElement("li");
   newTask.innerText = newTaskDescription.value;
